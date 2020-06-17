@@ -1,0 +1,188 @@
+[
+   {
+      "disabled": false,
+      "id": "e7c89970.ad9318",
+      "info": "",
+      "label": "Flow 1",
+      "type": "tab"
+   },
+   {
+      "func": "msg.payload=msg.payload.input;\nreturn msg;",
+      "id": "3d1a5e7f.dc2352",
+      "l": false,
+      "name": "",
+      "noerr": 0,
+      "outputs": 1,
+      "type": "function",
+      "wires": [
+         [
+            "b3d3ba71.424a2"
+         ]
+      ],
+      "x": 357,
+      "y": 370.20001220703125,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "func": "msg.payload=msg.payload.output.text[0]\nreturn msg;",
+      "id": "d3d36252.9beb9",
+      "l": false,
+      "name": "bot",
+      "noerr": 0,
+      "outputs": 1,
+      "type": "function",
+      "wires": [
+         [
+            "1fd2579d.7e8be",
+            "9aff01fe.0a3d08"
+         ]
+      ],
+      "x": 543,
+      "y": 369.20001220703125,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "active": true,
+      "complete": "true",
+      "console": false,
+      "id": "9aff01fe.0a3d08",
+      "l": false,
+      "name": "",
+      "targetType": "full",
+      "tosidebar": true,
+      "tostatus": false,
+      "type": "debug",
+      "wires": [],
+      "x": 672.600058555603,
+      "y": 439.20001888275146,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "crontab": "",
+      "id": "b0839b88.85cc28",
+      "l": false,
+      "name": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "topic": "hi",
+      "type": "inject",
+      "wires": [
+         [
+            "3d1a5e7f.dc2352"
+         ]
+      ],
+      "x": 199.60000610351562,
+      "y": 256.4000015258789,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "cancel": "cancel",
+      "formValue": {
+         "input": ""
+      },
+      "group": "ff967b15.f0ddc8",
+      "height": 0,
+      "id": "8e2a7d9f.31c2a8",
+      "l": false,
+      "label": "",
+      "name": "",
+      "options": [
+         {
+            "label": "enter text here",
+            "required": true,
+            "type": "text",
+            "value": "input"
+         }
+      ],
+      "order": 2,
+      "payload": "",
+      "submit": "submit",
+      "topic": "",
+      "type": "ui_form",
+      "width": 0,
+      "wires": [
+         [
+            "3d1a5e7f.dc2352"
+         ]
+      ],
+      "x": 196,
+      "y": 383.20001220703125,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "format": "{{msg.payload}}",
+      "height": 0,
+      "id": "7f4fee59.55946",
+      "l": false,
+      "label": "text",
+      "layout": "row-spread",
+      "name": "",
+      "order": 0,
+      "type": "ui_text",
+      "width": 0,
+      "wires": [],
+      "x": -13,
+      "y": 397,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "format": "{{msg.payload}}",
+      "group": "ff967b15.f0ddc8",
+      "height": "6",
+      "id": "1fd2579d.7e8be",
+      "l": false,
+      "label": "",
+      "layout": "col-center",
+      "name": "",
+      "order": 3,
+      "type": "ui_text",
+      "width": "6",
+      "wires": [],
+      "x": 676,
+      "y": 362.20001220703125,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "context": true,
+      "empty-payload": false,
+      "id": "b3d3ba71.424a2",
+      "multiuser": false,
+      "name": "chatbot",
+      "optout-learning": false,
+      "service-endpoint": "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/06c9b92f-7410-456e-aa0c-1954a08a1f89",
+      "timeout": "",
+      "type": "watson-conversation-v1",
+      "wires": [
+         [
+            "d3d36252.9beb9"
+         ]
+      ],
+      "workspaceid": "bbff86ef-266f-47db-847c-7a9eee0fe3f6",
+      "x": 460,
+      "y": 300,
+      "z": "e7c89970.ad9318"
+   },
+   {
+      "collapse": false,
+      "disp": true,
+      "id": "ff967b15.f0ddc8",
+      "name": "Default",
+      "order": 1,
+      "tab": "d14bc7d4.7312a8",
+      "type": "ui_group",
+      "width": "6",
+      "z": ""
+   },
+   {
+      "disabled": false,
+      "hidden": false,
+      "icon": "dashboard",
+      "id": "d14bc7d4.7312a8",
+      "name": "Home",
+      "type": "ui_tab",
+      "z": ""
+   }
+]
